@@ -1,0 +1,53 @@
+﻿<%--updated on: 04/25/2020--%>
+<%--update: setup the master page, validated the borrower form, add nav--%>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CdStore.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Derek's Music Rentals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <%--master header title--%>
+    <header>
+        <h1>Derek's Music Rentals</h1>
+    </header>
+    <form id="form1" runat="server" class="form-horizontal">
+        <div class="container">
+         <%--master nav--%>
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a runat="server" href="~/HomePage">Home</a></li>
+                    <li><a runat="server" href="~/Borrow">Borrow</a></li>
+                    <li><a runat="server" href="~/Artist">Artist</a></li>
+                    <li><a runat="server" href="~/CD">CD's</a></li>
+                </ul>
+            </div>
+            
+            <main>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </main>
+            <!--master footer-->
+            <footer>
+                <p>&copy; <asp:Label ID="lblYear" runat="server"></asp:Label> 
+                    Derek's Rentals</p>
+            </footer>
+            
+            <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
