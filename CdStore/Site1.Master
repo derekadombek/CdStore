@@ -32,7 +32,30 @@
                     <li><a runat="server" href="~/Borrow">Borrow</a></li>
                     <li><a runat="server" href="~/Artist">Artist</a></li>
                     <li><a runat="server" href="~/CD">CD's</a></li>
+                    <li runat="server">
+                        <asp:PlaceHolder runat="server" ID="LogoutButton" Visible="true">
+                                        <div>
+                                           <div>
+                                              <asp:Button runat="server" OnClick="SignOut" Text="Log out" />
+                                           </div>
+                                        </div>
+                                     </asp:PlaceHolder>
+                    </li>
                 </ul>
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                
+                               
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
             </div>
             
             <main>
